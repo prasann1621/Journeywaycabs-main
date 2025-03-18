@@ -1,0 +1,358 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Header Styles */
+  #header {
+    background: #333;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  #header .logo-wrap {
+    float: left;
+  }
+  
+  #header .logo-wrap img {
+    height: 50px;  /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and text */
+    vertical-align: middle; /* Align image with text */
+  }
+  
+  #header .logo {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #header .nav-links {
+    float: right;
+    margin-top: 10px;
+  }
+  
+  #header .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  #header .nav-links .book-now-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hero Section Styles */
+  #hero {
+    background: url('Assets/hero-image.jpg') no-repeat center center/cover;
+    height: 500px;
+    text-align: center;
+    color: #fff;
+    padding-top: 100px;
+  }
+  
+  #hero .hero-content {
+    position: relative; /* Create a positioning context */
+    z-index: 2; /* Ensure hero-content is above the background */
+  }
+  
+  #hero .hero-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  #hero .hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  #hero .service-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  
+  #hero .service-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+  }
+  
+  /* About Section Styles */
+  #about {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  #about img {
+    width: 100%; /* Make image responsive */
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  #about .about-intro {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+  /* Gallery Section Styles */
+  #gallery {
+    padding: 50px 0;
+    text-align: center;
+    background: #eee;
+  }
+  
+  #gallery .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #gallery .gallery-item {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+  }
+  
+  #gallery .gallery-item img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  #gallery .gallery-item .gallery-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  /* About Us Section Styles */
+  #about-us {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  #about-us .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  #about-us .about-text {
+    width: 50%;
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+  }
+  
+  #about-us .about-image {
+    width: 40%;
+  }
+  
+  #about-us .about-image img {
+    width: 100%;
+  }
+  
+  /* Services Section Styles */
+  #services {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  #services .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  #services .service-item {
+    width: 300px;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    background: #fff;
+  }
+  
+  #services .service-item h3 {
+    margin-top: 0;
+  }
+  
+  /* Testimonials Section Styles */
+  #testimonials {
+    padding: 50px 0;
+    text-align: center;
+    background: #eee;
+  }
+  
+  #testimonials .testimonial-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  #testimonials .testimonial-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+  
+  #testimonials .testimonial-user {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  #testimonials .testimonial-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  #testimonials .testimonial-user .user-info h4 {
+    margin: 0;
+  }
+  
+  /* Call to Action Section Styles */
+  #call-to-action {
+    padding: 50px 0;
+    text-align: center;
+    background: #333;
+    color: #fff;
+  }
+  
+  #call-to-action .contact-info {
+    margin-top: 20px;
+  }
+  
+  #call-to-action .contact-info p {
+    font-size: 1.2em;
+  }
+  
+  /* Footer Styles */
+  #footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  #footer .container {
+    padding-top: 0; /* Override container padding */
+    padding-bottom: 0; /* Override container padding */
+  }
+  
+  #footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  /* Style for the Back to Top button */
+  .back-to-top {
+      position: fixed; /* Fixed position so it stays in place */
+      bottom: 20px;     /* Position from the bottom */
+      right: 20px;      /* Position from the right */
+      background-color: #007bff; /* Blue background color */
+      color: white;        /* White text color */
+      padding: 10px 15px;   /* Padding around the text */
+      border-radius: 5px;  /* Rounded corners */
+      text-decoration: none; /* Remove underline from the link */
+      opacity: 0;          /* Initially hidden */
+      transition: opacity 0.3s; /* Smooth transition for opacity */
+      z-index: 999;         /* Ensure it's on top of other elements */
+  }
+  
+  .back-to-top:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .back-to-top.show {
+      opacity: 1;          /* Make it visible when the 'show' class is added */
+  }
+  
+  /* Basic Service Card Styling (Add more as needed) */
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .service-item {
+    width: 300px;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .service-item h3 {
+    margin-top: 0;
+  }
+  
+  /* Hero Image Styling */
+  #hero .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('Assets/hero-image.jpg') no-repeat center center/cover;
+      opacity: 0.6; /* Adjust for desired darkness */
+      z-index: 1; /* Place behind the text content */
+  }
+  
+  /* Service Detail Section Styling */
+  #service-detail {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+  /* Basic Popup Styling (Overriding Bootstrap) */
+  .popup {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      z-index: 1050; /* Ensure it's on top of everything else (Bootstrap modals use 1040) */
+  }
+  
+  .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 80%; /* Adjust as needed */
+      max-width: 600px;
+  }

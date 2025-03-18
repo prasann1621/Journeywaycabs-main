@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .popup { 
+            display: none; 
+            position: fixed; 
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.3); 
+            width: 300px;
+        }
+        .overlay { 
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.5); 
+        }
+        .close { 
+            cursor: pointer; 
+            float: right; 
+            font-size: 20px; 
+            font-weight: bold;
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background: #218838;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+        }
+        iframe {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="openForm()">Open Form</button>
+    <div id="message"></div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <h2>Contact Us</h2>
+        <form id="contactForm" target="hiddenFrame">
+            <input type="text" name="name" id="name" class="input-field" placeholder="Your Name" required><br>
+            <input type="tel" name="phone" id="phone" class="input-field" placeholder="Your Phone" required><br>
+            <label for="dropdown">Choose an itinerary:</label>
+<select id="dropdown" class="input-field" name="itinerary">
+  <option value="1 Day Mumbai itinerary"> 1 Day Mumbai itinerary</option>
+  <option value="2 Day Mumbai itinerary"> 2 Day Mumbai itinerary</option>
+  <option value="1 Day Lonavla itinerary"> 1 Day Lonavla itinerary</option>
+  <option value="2 Day Lonavla itinerary"> 2 Day Lonavla itinerary</option>
+  <option value="Local Rental itinerary"> Local Rental itinerary</option>
+  <option value="Outstation Rental itinerary"> Outstation Rental itinerary</option>
+  
+</select>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <iframe name="hiddenFrame" id="hiddenFrame"></iframe>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+        
+        function closeForm() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById("message");
+            messageDiv.textContent = text;
+            messageDiv.style.display = "block";
+            
+            if (isSuccess) {
+                messageDiv.className = "success";
+            } else {
+                messageDiv.className = "error";
+            }
+            
+            setTimeout(() => {
+                messageDiv.style.display = "none";
+            }, 5000);
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.querySelector(".submit-btn");
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = "Submitting...";
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(this);
+            
+            // Use this URL format for your deployed script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx7ieboEXtIlgpoMq8WfQ8Hmya65FsYs4LHuNAiY0JGCH_05sI0hhMQnLfzB7YfHmTwig/exec';
+            
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', // This is important
+                body: formData
+            })
+            .then(() => {
+                // We can't access the response with no-cors, so we just assume success
+                showMessage("Form submitted successfully!", true);
+                document.getElementById("contactForm").reset();
+                closeForm();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage("There was an error submitting the form. Please try again later.", false);
+            })
+            .finally(() => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>

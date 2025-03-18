@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journeyway Cabs</title>
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="popup.css">  <!-- Link to the contact form popup CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">  <!-- Bootstrap CSS -->
+    <style>
+         /* Styles for the booking modal */
+        .booking-modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .booking-modal.active {
+            display: block; /* Show the modal when active class is added */
+        }
+
+        .booking-container {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px; /* Maximum width */
+        }
+
+        .booking-modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .booking-modal .close:hover,
+        .booking-modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="frame-content">
+
+        <section id="hero">
+            <header id="header">
+                <div class="container">
+                    <div class="logo-wrap">
+                        <img src="Assets/logo.png" alt="Journeyway Cabs Logo">
+                        <a href="#home" class="logo">Journeyway Cabs</a>
+                    </div>
+                    <nav class="nav-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Service</a>
+                        <a href="#contact">Contact</a>
+                        <button class="book-now-btn" id="main-book-now-btn">Book Now</button>
+                    </nav>
+                </div>
+            </header>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle">Reliable, safe, affordable.</p>
+                    <h1 class="hero-title">Your Trusted</h1>
+                    <h1 class="hero-title primary">Ride</h1>
+                    <div class="contact-info">
+
+                    </div>
+
+                </div>
+                <div class="hero-image">
+                   
+                </div>
+            </div>
+            <div class="service-links">
+                <a href="#">Gateway to Mumbai  <i class="fas fa-landmark"></i></a>
+                <a href="#">Lonavala Escapade <i class="fas fa-cloud-rain"></i></a>
+                <a href="#">Urban Drive Rentals   <i class="fas fa-car"></i></a>
+                <a href="#">Roadtrip Beyond   <i class="fas fa-map-signs"></i></a>
+            </div>
+        </section>
+            <!-- REMAINING HERO SECTION AND OTHER SECTIONS (ABOUT, GALLERY, ABOUT US, SERVICES, TESTIMONIALS, CALL TO ACTION, FOOTER) AS BEFORE -->
+        </section>
+
+        <section id="about">
+            <img src="https://res.cloudinary.com/dmuecdqxy/q_auto/v1733843479/static/t1png_1733843479_99752.png" alt="Clouds">
+            <p class="about-intro">Journeyway Cabs is dedicated to providing safe, reliable, and affordable transportation solutions. We prioritize customer satisfaction and strive to exceed expectations.</p>
+
+        </section>
+
+
+        <section id="gallery">
+            <h2>Our Cab Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="Assets/sedan.jpg" alt="Cab Image">
+                    <p class="gallery-title">Cab Image</p>
+                    <p class="gallery-description">Explore our modern fleet and satisfied customers enjoying safe, comfortable rides with Journeyway Cabs. Learn more!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/ertiga.jpeg" alt="Ride Shots">
+                    <p class="gallery-title">Ride Shots</p>
+                    <p class="gallery-description">See candid shots of passengers enjoying their Journeyway Cabs experience, highlighting our commitment to customer satisfaction. Explore now!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/innova.jpg" alt="Event Rides">
+                    <p class="gallery-title">Event Rides</p>
+                    <p class="gallery-description">Check out photos from special events and occasions, highlighting our reliable transportation services for every need. Learn more!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/Gateway Of India Travel Plan.jpg" alt="City Views">
+                    <p class="gallery-title">City Views</p>
+                    <p class="gallery-description">Enjoy stunning city views from the comfort of our cabs, making every journey a memorable experience. Explore now!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/car interior.png" alt="Cab Interior">
+                    <p class="gallery-title">Cab Interior</p>
+                    <p class="gallery-description">Take a peek inside our clean, comfortable cabs, designed for a relaxing and enjoyable ride. Experience the difference!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/drihmlyza/image/upload/v1741019687/xim3sz42qjv5fgvl59ia.jpg" alt="Happy Faces">
+                    <p class="gallery-title">Happy Faces</p>
+                    <p class="gallery-description">Browse through photos of our happy customers, showcasing the joy and satisfaction of riding with Journeyway Cabs. Discover more!</p>
+                </div>
+            </div>
+        </section>        <section id="services">
+            <div class="container">
+                <h2>Explore Mumbai & Beyond</h2>
+                <p class="section-subtitle">Discover our range of convenient and comfortable cab services tailored to your needs.</p>
+                <div class="service-container">
+
+                    <!-- Mumbai Darshan -->
+                    <div class="service-item" data-service="mumbai-darshan">
+                        <div class="service-icon">
+                            <i class="fas fa-city"></i> <!-- Font Awesome icon for city sightseeing -->
+                        </div>
+                        <h3>Mumbai Darshan</h3>
+                        <h4>City Sightseeing</h4>
+                        <p>Discover Mumbai’s iconic landmarks with our Mumbai Sightseeing Tours.</p>
+                        <button class="service-details-btn" data-service="mumbai-darshan">View Details</button>
+
+                        <div class="service-details" data-service="mumbai-darshan" style="display: none;">
+                            <h4>Mumbai Darshan Details</h4>
+                            <p>Discover Mumbai’s iconic landmarks with our Mumbai Sightseeing Tours. Choose from North Mumbai or South Mumbai sightseeing packages and explore the best of the city.</p>
+
+                            <h5>North Mumbai Tour Highlights</h5>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> Worli Sea Face – Scenic view of the Arabian Sea.</li>
+                                <li><i class="fas fa-flask"></i> Nehru Planetarium & Science Centre – Interactive science exhibits.</li>
+                                <li><i class="fas fa-praying-hands"></i> Siddhivinayak Ganpati Temple – Seek blessings of Lord Ganesha.</li>
+                                <li><i class="fas fa-road"></i> Bandra-Worli Sea Link – An engineering marvel.</li>
+                                <li><i class="fas fa-camera"></i> Bandra Bandstand & Mount Mary Church – Bollywood’s favorite spot.</li>
+                                <li><i class="fas fa-umbrella-beach"></i> Juhu Beach & Juhu ISKCON Temple – Relax at Mumbai’s famous beach.</li>
+                            </ul>
+
+                            <h5>South Mumbai Tour Highlights</h5>
+                            <ul>
+                                <li><i class="fas fa-monument"></i> Gateway of India & Taj Mahal Hotel – Mumbai’s heritage landmark.</li>
+                                <li><i class="fas fa-water"></i> Marine Drive & Girgaon Chowpatty Viewing Deck – The Queen’s Necklace.</li>
+                                <li><i class="fas fa-tree"></i> Kamla Nehru Park & Hanging Gardens – Scenic greenery in the city.</li>
+                                <li><i class="fas fa-fish"></i> Taraporewala Aquarium – India’s oldest aquarium.</li>
+                                <li><i class="fas fa-university"></i> Chhatrapati Shivaji Maharaj Museum & Flora Fountain – Historical gems.</li>
+                                <li><i class="fas fa-archway"></i> Elephanta Caves & Chhatrapati Shivaji Terminus (CST) – UNESCO Heritage sites.</li>
+                                <li><i class="fas fa-mosque"></i> Haji Ali Dargah, Mahalaxmi Temple & Mahalaxmi Race Course – Spiritual & elite
+                                    landmarks.</li>
+                            </ul>
+
+                            <h5>Mumbai Sightseeing Cab Rates</h5>
+                            <select id="mumbai-darshan-car-type" class="car-type-select" data-service="Mumbai Darshan">
+                                <option value="">Select Car Type</option>
+                                <option value="Hatchback">Hatchback</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="Ertiga">Ertiga</option>
+                                <option value="Kia Carens">Kia Carens</option>
+                                <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
+                            </select>
+                            <div id="mumbai-darshan-pricing" class="pricing-display"></div>
+                            <button class="book-now-btn" data-service="mumbai-darshan">Book Now</button>
+
+                        </div>
+                    </div>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            // Define the pricing for each car type
+                            const mumbaiDarshanPricing = {
+                                "Hatchback": "₹2500",
+                                "Sedan": "₹3000",
+                                "Ertiga": "₹4000",
+                                "Kia Carens": "₹4500",
+                                "Toyota Innova Crysta": "₹5000"
+                            };
+
+                            // Get the select element and pricing display div
+                            const carTypeSelect = document.getElementById("mumbai-darshan-car-type");
+                            const pricingDisplay = document.getElementById("mumbai-darshan-pricing");
+
+                            // Event listener for dropdown change
+                            carTypeSelect.addEventListener("change", function () {
+                                const selectedCar = carTypeSelect.value;
+
+                                if (selectedCar) {
+                                    pricingDisplay.innerHTML = <p><strong>Price:</strong> ${mumbaiDarshanPricing[selectedCar]}</p>;
+                                } else {
+                                    pricingDisplay.innerHTML = "";
+                                }
+                            });
+                        });
+                    </script>
+
+<!-- Lonavala Trip -->
+<div class="service-item" data-service="lonavala-trip">
+    <div class="service-icon">
+        <i class="fas fa-mountain"></i> <!-- Font Awesome icon for mountain trip -->
+    </div>
+    <h3>Lonavala Trip</h3>
+    <h4>A Perfect Weekend Getaway!</h4>
+    <p>Escape the hustle and bustle of the city with our Lonavala Trip Package. Enjoy scenic waterfalls, ancient caves, and breathtaking viewpoints on this refreshing journey.</p>
+    <button class="service-details-btn" data-service="lonavala-trip">View Details</button>
+
+    <div class="service-details" data-service="lonavala-trip" style="display: none;">
+        <h4>Lonavala Trip Details</h4>
+        <p>Enjoy scenic waterfalls, ancient caves, and breathtaking viewpoints with our Lonavala Trip Package.</p>
+
+        <h5>Top Attractions Covered</h5>
+        <ul>
+            <li><i class="fas fa-water"></i> Bhushi Dam – A famous monsoon destination with scenic beauty.</li>
+            <li><i class="fas fa-mountain"></i> Tiger Point – Stunning cliffside views, perfect for sunrise/sunset.</li>
+            <li><i class="fas fa-landmark"></i> Karla Caves – Ancient Buddhist rock-cut caves.</li>
+            <li><i class="fas fa-water"></i> Lonavala Lake – A serene and peaceful getaway.</li>
+            <li><i class="fas fa-shopping-basket"></i> Lonavala Market – Buy famous Chikki & local delicacies.</li>
+            <li><i class="fas fa-tree"></i> Ryewood Park – A lush green garden for relaxation.</li>
+            <li><i class="fas fa-mountain"></i> Khandala – Another beautiful hill station nearby.</li>
+            <li><i class="fas fa-eye"></i> Lion’s Point – One of the best viewpoints in Lonavala.</li>
+            <li><i class="fas fa-user"></i> Celebrity Wax Museum – Life-like wax statues of celebrities.</li>
+            <li><i class="fas fa-place-of-worship"></i> Shree Narayani Dham Temple – A divine temple with beautiful architecture.</li>
+        </ul>
+
+        <h5>Lonavala Trip Cab Packages & Rates</h5>
+        <p>Enjoy a refreshing getaway to Lonavala with our Same-Day & Multi-Day Cab Packages.</p>
+        
+        <h6>Same-Day Return (250 Kms)</h6>
+        <ul>
+            <li><i class="fas fa-car"></i> Sedan – ₹3700</li>
+            <li><i class="fas fa-car"></i> Ertiga – ₹4700</li>
+            <li><i class="fas fa-car"></i> Innova – ₹5100</li>
+            <li><i class="fas fa-car"></i> Toyota Innova Crysta – ₹5700</li>
+        </ul>
+
+        <h6>2 Days, 1 Night (500 Kms)</h6>
+        <ul>
+            <li><i class="fas fa-car"></i> Sedan – ₹7500</li>
+            <li><i class="fas fa-car"></i> Ertiga – ₹8700</li>
+            <li><i class="fas fa-car"></i> Innova – ₹9700</li>
+            <li><i class="fas fa-car"></i> Toyota Innova Crysta – ₹10700</li>
+        </ul>
+
+        <h6>Extra Charges</h6>
+        <ul>
+            <li><i class="fas fa-plus"></i> Extra Kms:</li>
+            <li>Sedan: ₹14/km</li>
+            <li>Ertiga: ₹16/km</li>
+            <li>Innova: ₹18/km</li>
+            <li>Crysta: ₹20/km</li>
+        </ul>
+
+        <select id="lonavala-trip-car-type" class="car-type-select" data-service="Lonavala Trip">
+            <option value="">Select Car Type</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Ertiga">Ertiga</option>
+            <option value="Innova">Innova</option>
+            <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
+        </select>
+        <div id="lonavala-trip-pricing" class="pricing-display"></div>
+        <button class="book-now-btn" data-service="lonavala-trip">Book Now</button>
+    </div>
+</div>
+
+        
+                    <!-- Local Rental -->
+                    <div class="service-item" data-service="local-rental">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i> <!-- Font Awesome icon for hourly convenience -->
+                        </div>
+                        <h3>Local Rental</h3>
+                        <h4>Hourly Convenience</h4>
+                        <p>Need a ride for a few hours? Our local rental service offers flexible hourly bookings.</p>
+                        <button class="service-details-btn" data-service="local-rental">View Details</button>
+        
+                        <div class="service-details" data-service="local-rental" style="display: none;">
+                            <h4>Local Rental Cabs – Hassle-Free City Travel! </h4>
+                            <p>Looking for a comfortable ride within Mumbai? Our Local Rental Cab Services are designed for business meetings, shopping trips, and leisure travel.</p>
+        
+                            <h5>Local Rental Cab Rates</h5>
+        
+                            <select id="local-rental-car-type" class="car-type-select" data-service="Local Rental">
+                                <option value="">Select Car Type</option>
+                                <option value="Hatchback">Hatchback</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="Ertiga">Ertiga</option>
+                                <option value="Kia Carens">Kia Carens</Kia Carens>
+                                <option value="Toyota Innova Crysta">Toyota Innova Crysta</Toyota Innova Crysta>
+                            </select>
+                            <div id="local-rental-pricing" class="pricing-display"></div>
+                            <button class="book-now-btn" data-service="Local Rental">Book Now</button>
+        
+                        </div>
+                    </div>
+        
+                    <!-- Outstation Travel -->
+                    <div class="service-item" data-service="outstation-travel">
+                        <div class="service-icon">
+                            <i class="fas fa-route"></i> <!-- Font Awesome icon for outstation travel -->
+                        </div>
+                        <h3>Outstation Travel</h3>
+                        <h4>Comfortable Journeys</h4>
+                        <p>Plan your trip to nearby cities with our reliable outstation travel service.</p>
+                        <button class="service-details-btn" data-service="outstation-travel">View Details</button>
+        
+                        <div class="service-details" data-service="outstation-travel" style="display: none;">
+                            <h4>Outstation Cab Packages – Explore Beyond Mumbai </h4>
+                            <p>Planning an outstation trip? Our Outstation Cab Services ensure a comfortable and seamless journey at the best rates. Whether you're visiting temples, forts, or scenic spots, we've got you covered.</p>
+        
+                            <h5>Popular Outstation Destinations Covered</h5>
+                            <ul>
+                                <li><i class="fas fa-sun"></i> Alibaug – Beach getaway with forts and seafood.</li>
+                                <li><i class="fas fa-praying-hands"></i> Ashtavinayak Darshan – Visit 8 sacred Ganpati temples.</li>
+                                <li><i class="fas fa-landmark"></i> Trimbakeshwar – Home to one of the 12 Jyotirlingas.</li>
+                                <li><i class="fas fa-dharmachakra"></i> Jyotirlinga Tour – Cover Maharashtra’s spiritual Jyotirlinga sites.</li>
+                                <li><i class="fas fa-mountain"></i> Bhimashankar – A divine trek to Lord Shiva’s temple.</li>
+                                <li><i class="fas fa-kaaba"></i> Shirdi – Seek blessings at Sai Baba Temple.</li>
+                                <li><i class="fas fa-archway"></i> Ellora Caves – UNESCO heritage site with rock-cut caves.</li>
+                                <li><i class="fas fa-code-branch"></i> Ajanta Caves – UNESCO heritage site with Buddhist rock-cut cave.</li>
+                            </ul>
+        
+                            <h5>Outstation Cab Rates</h5>
+                            <select id="outstation-travel-car-type" class="car-type-select" data-service="Outstation Travel">
+                                <option value="">Select Car Type</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="Ertiga">Ertiga</option>
+                                <option value="Kia Carens">Kia Carens</Kia Carens>
+                                <option value="Toyota Innova Crysta">Toyota Innova Crysta</Toyota Innova Crysta>
+                            </select>
+                            <div id="outstation-travel-pricing" class="pricing-display"></div>
+                            <button class="book-now-btn" data-service="Outstation Travel">Book Now</button>
+        
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Common Rules Section (Visible across all services) -->
+                <div class="common-rules">
+                    <h4>Common Rules:</h4>
+                    <ul>
+                        <li> No Garage-to-Garage Charges – Billing starts from your pickup point.</li>
+                        <li> Toll charges, parking fees & monument entry tickets are not included.</li>
+                        <li> Pickup & drop charges mentioned are for Mumbai.</li>
+                        <li> For pickups from locations other than Mumbai, call or WhatsApp us!</li>
+                    </ul>
+                </div>
+        
+        
+                <!-- Booking Details Popup Form (Hidden by Default) -->
+                <div id="booking-modal" class="booking-modal">
+                    <div class="booking-container">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h2>Book Your Ride</h2>
+                            <button type="button" class="btn-close" id="close-modal" aria-label="Close"></button>
+                        </div>
+        
+                        <form id="booking-form">
+                             <div class="mb-3">
+                                <label for="service-type" class="form-label">Service Type:</label>
+                                <input type="text" id="service-type" name="service-type" class="form-control" readonly>
+                            </div>
+        
+                            <div class="mb-3">
+                                <label for="customer-name" class="form-label">Customer Name:</label>
+                                <input type="text" name="customer-name" id="customer-name" class="form-control" placeholder="Your Name" required><br>
+                            </div>
+                            <div class="mb-3">
+                                <label for="customer-phone" class="form-label">Customer Phone:</label>
+                                <input type="tel" name="customer-phone" id="customer-phone" class="form-control" placeholder="Your Phone" required><br>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pickup-date" class="form-label">Pickup Date:</label>
+                                <input type="date" name="pickup-date" id="pickup-date" class="form-control" placeholder="Your Phone" required><br>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pickup-time" class="form-label">Pickup Time:</label>
+                                <input type="time" name="pickup-time" id="pickup-time" class="form-control" placeholder="Your Phone" required><br>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pickup-address" class="form-label">Pickup Address:</label>
+                                <textarea id="pickup-address" name="pickup-address" class="form-control" required></textarea>
+                            </div>
+            
+                            <div class="mb-3">
+                                <label for="other-details" class="form-label">Other Details:</label>
+                                <textarea id="other-details" name="other-details" class="form-control" placeholder="Number of passengers, special requests, etc."></textarea>
+                            </div>
+        
+                            <button type="submit" class="btn btn-primary w-100">Submit Booking</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials">
+            <h2>What Our Customers Say About Journeyway Cabs</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Journeyway Cabs provided a prompt, courteous service. The driver was professional, and the cab was clean and comfortable. Highly recommended!</p>
+                    <div class="testimonial-user">
+                        <div class="user-info">
+                            <h4>Jane Doe</h4>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="call-to-action">
+            <h2>GET IN TOUCH</h2>
+            <div class="contact-info">
+                <div class="contact-text">
+                    <p>Your reliable transportation partner.</p>
+                    <p>info@journeywaycabs.com</p>
+                </div>
+
+        </section>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-links" style="text-align: center;">
+                    <a href="https://quintoxsolutions.com" target="_blank" rel="noopener noreferrer">
+                        Designed and Managed by Quintox Solutions
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+     <!-- Contact Form Popup Structure -->
+     <div class="overlay" id="overlay"></div>
+
+     <div class="popup" id="popup">
+         <span class="close" id="closeForm">×</span>
+         <h2>Contact Us</h2>
+         <form id="contactForm" target="hiddenFrame">
+             <input type="text" name="name" id="name" class="input-field" placeholder="Your Name" required><br>
+             <input type="tel" name="phone" id="phone" class="input-field" placeholder="Your Phone" required><br>
+             <label for="dropdown">Choose an itinerary:</label>
+             <select id="dropdown" class="input-field-drop" name="itinerary">
+                 <option value="1 Day Mumbai itinerary"> 1 Day Mumbai itinerary</option>
+                 <option value="2 Day Mumbai itinerary"> 2 Day Mumbai itinerary</option>
+                 <option value="1 Day Lonavla itinerary"> 1 Day Lonavla itinerary</option>
+                 <option value="2 Day Lonavla itinerary"> 2 Day Lonavla itinerary</option>
+                 <option value="Local Rental"> Local Rental y</option>
+                 <option value="Outstation Rental"> Outstation Rental </option>
+             </select>
+             <button type="submit" class="submit-btn">Submit</button>
+         </form>
+         <iframe name="hiddenFrame" id="hiddenFrame"></iframe>
+     </div>
+     <div id="message"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Booking Details Popup Form (Hidden by Default) -->
+    <div id="booking-popup" class="popup position-fixed top-50 start-50 translate-middle d-none">
+        <div class="popup-content bg-white p-4 rounded shadow-lg">
+            <span class="close-button text-danger fs-4 fw-bold float-end" id="closeBookingForm" style="cursor: pointer;">×</span>
+            <h2 class="text-center mb-3">Booking Details</h2>
+            <div id="booking-message" class="alert mb-3" style="display: none;"></div>
+            <form id="booking-form">
+                <div class="mb-3">
+                    <label for="service-type" class="form-label">Service Type:</label>
+                    <select id="service-type" name="service-type" class="form-control" required>
+                        <option value="">Select a service</option>
+                        <option value="Mumbai Darshan">Mumbai Darshan</option>
+                        <option value="Lonavla Trip">Lonavla Trip</option>
+                        <option value="Local Rental">Local Rental</option>
+                        <option value="Outstation Travel">Outstation Travel</option>
+                    </select>
+                </div>
+                
+                
+                
+                <!-- Booking Modal -->
+                <div id="booking-modal" class="booking-modal">
+                    <div class="booking-container">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h2>Book Your Ride</h2>
+                            <button type="button" class="btn-close" id="close-modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <form id="booking-form">
+                            <div class="mb-3">
+                                <label for="pickup-date" class="form-label">Pickup Date:</label>
+                                <input type="date" id="pickup-date" name="pickup-date" class="form-control" required />
+                            </div>
+            
+                            <div class="mb-3">
+                                <label for="pickup-time" class="form-label">Pickup Time:</label>
+                                <input type="time" id="pickup-time" name="pickup-time" class="form-control" required />
+                            </div>
+            
+                            <div class="mb-3">
+                                <label for="pickup-address" class="form-label">Pickup Address:</label>
+                                <textarea id="pickup-address" name="pickup-address" class="form-control" required></textarea>
+                            </div>
+            
+                            <div class="mb-3">
+                                <label for="other-details" class="form-label">Other Details:</label>
+                                <textarea id="other-details" name="other-details" class="form-control" placeholder="Number of passengers, special requests, etc."></textarea>
+                            </div>
+            
+                            <button type="submit" class="btn btn-primary w-100">Submit Booking</button>
+                        </form>
+                    </div>
+                </div>
+                
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap Bundle JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap Bundle JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Fix: Remove the semicolon from the script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzcTYj64u4pYY5JJQn0i78Xo5BNip74ml5xHKa6sML2ub_gdi7BOfj1hdCxVB7XW9ka/exec';
+
+    // --- View Details Logic ---
+    const serviceItems = document.querySelectorAll('.service-item');
+    serviceItems.forEach(item => {
+        const detailsBtn = item.querySelector('.service-details-btn');
+        if (detailsBtn) {
+            detailsBtn.addEventListener('click', function() {
+                const serviceId = this.dataset.service;
+                // Fix: Template literals syntax
+                const detailsDiv = item.querySelector(`.service-details[data-service="${serviceId}"]`);
+                if (detailsDiv) {
+                    detailsDiv.style.display = detailsDiv.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+        }
+    });
+
+    // --- Book Now Button & Modal Logic ---
+    const bookNowButtons = document.querySelectorAll('.book-now-btn');
+    bookNowButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const serviceType = this.dataset.service;
+            const bookingModal = document.getElementById('booking-modal');
+            const serviceTypeInput = document.getElementById('service-type');
+
+            if (bookingModal) {
+                bookingModal.classList.add('active');
+            }
+
+            if (serviceTypeInput) {
+                serviceTypeInput.value = serviceType;
+            }
+        });
+    });
+
+    const closeModalButton = document.getElementById('close-modal');
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', function() {
+            const bookingModal = document.getElementById('booking-modal');
+            if (bookingModal) {
+                bookingModal.classList.remove('active');
+            }
+        });
+    }
+
+    // --- Pricing Logic ---
+    function setupPricing(serviceItemId) {
+        // Fix: Template literals syntax
+        const serviceItem = document.querySelector(`.service-item[data-service="${serviceItemId}"]`);
+        if (!serviceItem) return;
+
+        const carTypeSelect = serviceItem.querySelector('.car-type-select');
+        const pricingDisplay = serviceItem.querySelector('.pricing-display');
+
+        if (!carTypeSelect || !pricingDisplay) return;
+
+        let pricingData = {};
+
+        if (serviceItemId === 'mumbai-darshan') {
+            pricingData = {
+                "Hatchback": "₹2500",
+                "Sedan": "₹3000",
+                "Ertiga": "₹4000",
+                "Kia Carens": "₹4500",
+                "Toyota Innova Crysta": "₹5000"
+            };
+        } else if (serviceItemId === 'lonavala-trip') {
+            pricingData = {
+                "Sedan": {
+                    "Same-Day Return (250 Kms)": "₹3700",
+                    "2 Days, 1 Night (500 Kms)": "₹7500",
+                    "Extra Kms": "₹14/km"
+                },
+                "Ertiga": {
+                    "Same-Day Return (250 Kms)": "₹4700",
+                    "2 Days, 1 Night (500 Kms)": "₹8700",
+                    "Extra Kms": "₹16/km"
+                },
+                "Innova": {
+                    "Same-Day Return (250 Kms)": "₹5100",
+                    "2 Days, 1 Night (500 Kms)": "₹9700",
+                    "Extra Kms": "₹18/km"
+                },
+                "Toyota Innova Crysta": {
+                    "Same-Day Return (250 Kms)": "₹5700",
+                    "2 Days, 1 Night (500 Kms)": "₹10700",
+                    "Extra Kms": "₹20/km"
+                }
+            };
+        } else if (serviceItemId === 'local-rental') {
+            // Add local rental pricing if needed
+            pricingData = {
+                "Hatchback": "₹1800 for 4 hours/40 km",
+                "Sedan": "₹2200 for 4 hours/40 km",
+                "Ertiga": "₹3000 for 4 hours/40 km",
+                "Kia Carens": "₹3500 for 4 hours/40 km",
+                "Toyota Innova Crysta": "₹4000 for 4 hours/40 km"
+            };
+        } else if (serviceItemId === 'outstation-travel') {
+            // Add outstation travel pricing if needed
+            pricingData = {
+                "Sedan": "₹12/km (min 250 km)",
+                "Ertiga": "₹14/km (min 250 km)",
+                "Kia Carens": "₹16/km (min 250 km)",
+                "Toyota Innova Crysta": "₹18/km (min 250 km)"
+            };
+        }
+
+        carTypeSelect.addEventListener('change', function() {
+            const selectedCar = this.value;
+            if (serviceItemId === 'lonavala-trip') {
+                if (selectedCar && pricingData[selectedCar]) {
+                    let pricingText = '';
+                    for (const key in pricingData[selectedCar]) {
+                        // Fix: Template literals syntax
+                        pricingText += `<p><strong>${key}:</strong> ${pricingData[selectedCar][key]}</p>`;
+                    }
+                    pricingDisplay.innerHTML = pricingText;
+                } else {
+                    pricingDisplay.innerHTML = '';
+                }
+            } else {
+                if (selectedCar && pricingData[selectedCar]) {
+                    // Fix: Template literals syntax
+                    pricingDisplay.innerHTML = `<p><strong>Price:</strong> ${pricingData[selectedCar]}</p>`;
+                } else {
+                    pricingDisplay.innerHTML = "";
+                }
+            }
+        });
+    }
+
+    // Initialize pricing logic for each service
+    const serviceItemsId = document.querySelectorAll('.service-item');
+    serviceItemsId.forEach(serviceItem => {
+        const serviceItemId = serviceItem.dataset.service;
+        if (serviceItemId) {
+            setupPricing(serviceItemId);
+        }
+    });
+
+    // --- Google Sheet Form Submission ---
+    const form = document.getElementById('booking-form');
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Create a notification element for user feedback
+            let notificationDiv = document.getElementById("booking-notification");
+            if (!notificationDiv) {
+                notificationDiv = document.createElement("div");
+                notificationDiv.id = "booking-notification";
+                notificationDiv.style.position = "fixed";
+                notificationDiv.style.top = "20px";
+                notificationDiv.style.left = "50%";
+                notificationDiv.style.transform = "translateX(-50%)";
+                notificationDiv.style.padding = "15px";
+                notificationDiv.style.borderRadius = "5px";
+                notificationDiv.style.zIndex = "9999";
+                document.body.appendChild(notificationDiv);
+            }
+            
+            // Show loading notification
+            notificationDiv.textContent = "Submitting your booking...";
+            notificationDiv.style.backgroundColor = "#f0ad4e";
+            notificationDiv.style.color = "white";
+            notificationDiv.style.display = "block";
+            
+            // Get form data and convert to JSON
+            const formData = new FormData(form);
+            const jsonData = {};
+            
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+            
+            // Add timestamp
+            jsonData['timestamp'] = new Date().toISOString();
+            
+            // Send the data to Google Apps Script
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify(jsonData),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Success notification
+                notificationDiv.textContent = "Booking submitted successfully! We'll contact you shortly.";
+                notificationDiv.style.backgroundColor = "#5cb85c";
+                
+                // Reset the form
+                form.reset();
+                
+                // Close the modal after a delay
+                setTimeout(() => {
+                    document.getElementById('booking-modal').classList.remove('active');
+                    setTimeout(() => {
+                        notificationDiv.style.display = "none";
+                    }, 2000);
+                }, 1500);
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                
+                // Error notification
+                notificationDiv.textContent = "Error submitting booking. Please try again or contact us directly.";
+                notificationDiv.style.backgroundColor = "#d9534f";
+                
+                setTimeout(() => {
+                    notificationDiv.style.display = "none";
+                }, 5000);
+            });
+        });
+    }
+});
+    </script>
+<style>
+
+</style>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journeyway Cabs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Style for the Back to Top button */
+        .back-to-top {
+            position: fixed; /* Fixed position so it stays in place */
+            bottom: 20px;     /* Position from the bottom */
+            right: 20px;      /* Position from the right */
+            background-color: #007bff; /* Blue background color */
+            color: white;        /* White text color */
+            padding: 10px 15px;   /* Padding around the text */
+            border-radius: 5px;  /* Rounded corners */
+            text-decoration: none; /* Remove underline from the link */
+            opacity: 0;          /* Initially hidden */
+            transition: opacity 0.3s; /* Smooth transition for opacity */
+            z-index: 999;         /* Ensure it's on top of other elements */
+        }
+
+        .back-to-top:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .back-to-top.show {
+            opacity: 1;          /* Make it visible when the 'show' class is added */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frame-content">
+
+        <section id="hero">
+            <header id="header">
+                <div class="container">
+                    <div class="logo-wrap">
+                        <img src="Assets/logo.png" alt="Journeyway Cabs Logo">
+                        <a href="#home" class="logo">Journeyway Cabs</a>
+                    </div>
+                    <nav class="nav-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Service</a>
+                        <a href="#contact">Contact</a>
+                        <button class="book-now-btn"><a href="#contact">Book Now</a></button>
+                    </nav>
+                </div>
+            </header>
+
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle">Reliable, safe, affordable.</p>
+                    <h1 class="hero-title">Your Trusted</h1>
+                    <h1 class="hero-title primary">Ride</h1>
+                    <div class="contact-info">
+
+                    </div>
+
+                </div>
+                <div class="hero-image">
+                    <!-- Background image handled in CSS -->
+                </div>
+            </div>
+            <div class="service-links">
+                <a href="#">Gateway to Mumbai  <i class="fas fa-landmark"></i></a>
+                <a href="#">Lonavala Escapade <i class="fas fa-cloud-rain"></i></a>
+                <a href="#">Urban Drive Rentals   <i class="fas fa-car"></i></a>
+                <a href="#">Roadtrip Beyond   <i class="fas fa-map-signs"></i></a>
+            </div>
+        </section>
+
+        <section id="about">
+            <img src="https://res.cloudinary.com/dmuecdqxy/q_auto/v1733843479/static/t1png_1733843479_99752.png" alt="Clouds">
+            <p class="about-intro">Journeyway Cabs is dedicated to providing safe, reliable, and affordable transportation solutions. We prioritize customer satisfaction and strive to exceed expectations.</p>
+
+        </section>
+
+
+        <section id="gallery">
+            <h2>Our Cab Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="Assets/sedan.jpg" alt="Cab Image">
+                    <p class="gallery-title">Cab Image</p>
+                    <p class="gallery-description">Explore our modern fleet and satisfied customers enjoying safe, comfortable rides with Journeyway Cabs. Learn more!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/ertiga.jpeg" alt="Ride Shots">
+                    <p class="gallery-title">Ride Shots</p>
+                    <p class="gallery-description">See candid shots of passengers enjoying their Journeyway Cabs experience, highlighting our commitment to customer satisfaction. Explore now!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/innova.jpg" alt="Event Rides">
+                    <p class="gallery-title">Event Rides</p>
+                    <p class="gallery-description">Check out photos from special events and occasions, highlighting our reliable transportation services for every need. Learn more!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/Gateway Of India Travel Plan.jpg" alt="City Views">
+                    <p class="gallery-title">City Views</p>
+                    <p class="gallery-description">Enjoy stunning city views from the comfort of our cabs, making every journey a memorable experience. Explore now!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Assets/car interior.png" alt="Cab Interior">
+                    <p class="gallery-title">Cab Interior</p>
+                    <p class="gallery-description">Take a peek inside our clean, comfortable cabs, designed for a relaxing and enjoyable ride. Experience the difference!</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/drihmlyza/image/upload/v1741019687/xim3sz42qjv5fgvl59ia.jpg" alt="Happy Faces">
+                    <p class="gallery-title">Happy Faces</p>
+                    <p class="gallery-description">Browse through photos of our happy customers, showcasing the joy and satisfaction of riding with Journeyway Cabs. Discover more!</p>
+                </div>
+            </div>
+        </section>
+        <section id="about-us">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>Journeyway Cabs: Your Trusted Ride</h2>
+                    <p>At Journeyway Cabs, we're passionate about providing safe, reliable, and comfortable transportation services. We believe getting around town should be stress-free, whether it's a quick trip across the city, a weekend getaway to Lonavla, or a convenient airport transfer.</p>
+                    <p>Our experienced drivers, well-maintained vehicles, and commitment to customer satisfaction set us apart. We strive to exceed your expectations with every ride, making Journeyway Cabs your go-to choice for all your transportation needs in Mumbai and beyond.</p>
+                    <p>Discover the Journeyway difference today!</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://res.cloudinary.com/dmuecdqxy/q_auto/v1734601649/static/undraw_delivery-address_409gsvg_1734601648_53005.svg" alt="About Journeyway Cabs">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Explore Mumbai & Beyond</h2>
+            <div class="service-container">
+                <div class="service-item" data-service="mumbai-darshan">
+                    <p>01</p>
+                    <h3>Mumbai Darshan</h3>
+                    <h4>City Sightseeing</h4>
+                    <p>Discover the iconic landmarks and hidden gems of Mumbai with our comprehensive Mumbai Darshan tour. Experience the city's rich culture and history.</p>
+                    <a href="#" class="service-link"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+        
+                <div class="service-item" data-service="lonavla-trip">
+                    <p>02</p>
+                    <h3>Lonavla Trip</h3>
+                    <h4>Hill Station Getaway</h4>
+                    <p>Escape to the serene hills of Lonavla. Enjoy breathtaking views, lush greenery, and a refreshing break from the city bustle with Journeyway Cabs.</p>
+                    <a href="#" class="service-link"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+        
+                <div class="service-item" data-service="local-rental">
+                    <p>03</p>
+                    <h3>Local Rental</h3>
+                    <h4>Hourly Convenience</h4>
+                    <p>Need a ride for a few hours? Our local rental service offers flexible hourly bookings for errands, meetings, or exploring Mumbai at your own pace.</p>
+                    <a href="#" class="service-link"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+        
+                <div class="service-item" data-service="outstation-travel">
+                    <p>04</p>
+                    <h3>Outstation Travel</h3>
+                    <h4>Comfortable Journeys</h4>
+                    <p>Plan your trip to nearby cities with our reliable outstation travel service. Enjoy comfortable and safe journeys with Journeyway Cabs.</p>
+                    <a href="#" class="service-link"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+            </div>
+        
+            <!-- Popup Container (Hidden by Default) -->
+            <div id="service-popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-button">×</span>
+                    <h2 id="popup-title"></h2>
+                    <div id="popup-description"></div>
+                    <div id="popup-rates"></div>
+                    <button id="book-now-popup">Book Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <style>
+            /* Popup Styling */
+            .popup {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+                z-index: 1000; /* Ensure it's on top */
+            }
+        
+            .popup-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                width: 80%;
+                max-width: 600px;
+            }
+        
+            .close-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        </style>
+        
+        <script>
+            // JavaScript for Popup Functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const serviceItems = document.querySelectorAll('.service-item');
+                const popup = document.getElementById('service-popup');
+                const popupTitle = document.getElementById('popup-title');
+                const popupDescription = document.getElementById('popup-description');
+                const popupRates = document.getElementById('popup-rates');
+                const closeButton = document.querySelector('.close-button');
+                const bookNowButton = document.getElementById('book-now-popup');
+        
+                serviceItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const service = this.dataset.service;
+        
+                        // You would replace this with actual data from an API or data structure
+                        let serviceData;
+                        switch (service) {
+                            case 'mumbai-darshan':
+                                serviceData = {
+                                    title: 'Mumbai Darshan',
+                                    description: 'Explore the Gateway of India, Marine Drive, and more with our Mumbai Darshan tour.',
+                                    rates: 'Starting from ₹2000 for a full-day tour.',
+                                    bookingLink: 'https://example.com/mumbai-darshan-booking' // Replace with actual booking link
+                                };
+                                break;
+                            case 'lonavla-trip':
+                                serviceData = {
+                                    title: 'Lonavla Trip',
+                                    description: 'Enjoy scenic views and refreshing air with our Lonavla trip package.',
+                                    rates: 'Starting from ₹3500 for a round trip.',
+                                    bookingLink: 'https://example.com/lonavla-trip-booking' // Replace with actual booking link
+                                };
+                                break;
+                            case 'local-rental':
+                                serviceData = {
+                                    title: 'Local Rental',
+                                    description: 'Get a cab for hourly rentals in Mumbai for all your local travel needs.',
+                                    rates: '₹500 for the first hour, then ₹300 per additional hour.',
+                                    bookingLink: 'https://example.com/local-rental-booking' // Replace with actual booking link
+                                };
+                                break;
+                            case 'outstation-travel':
+                                serviceData = {
+                                    title: 'Outstation Travel',
+                                    description: 'Travel to nearby cities with our comfortable and reliable outstation service.',
+                                    rates: '₹10 per km (minimum charge of ₹5000).',
+                                    bookingLink: 'https://example.com/outstation-travel-booking' // Replace with actual booking link
+                                };
+                                break;
+                            default:
+                                serviceData = {
+                                    title: 'Service Not Found',
+                                    description: 'Service details not available.',
+                                    rates: '',
+                                    bookingLink: '#'
+                                };
+                        }
+        
+                        popupTitle.textContent = serviceData.title;
+                        popupDescription.textContent = serviceData.description;
+                        popupRates.textContent = serviceData.rates;
+                        bookNowButton.onclick = function() {
+                            window.location.href = serviceData.bookingLink; // Redirect to booking page
+                        };
+        
+                        popup.style.display = 'block'; // Show the popup
+                    });
+                });
+        
+                closeButton.addEventListener('click', function() {
+                    popup.style.display = 'none'; // Hide the popup
+                });
+        
+                // Close the popup if the user clicks outside the popup content
+                window.addEventListener('click', function(event) {
+                    if (event.target === popup) {
+                        popup.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+        <section id="testimonials">
+            <h2>What Our Customers Say About Journeyway Cabs</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Journeyway Cabs provided a prompt, courteous service. The driver was professional, and the cab was clean and comfortable. Highly recommended!</p>
+                    <div class="testimonial-user">
+                        <img src="https://res.cloudinary.com/drihmlyza/image/upload/v1741019688/uaygns8oga8hfnzaescg.jpg" alt="Jane Doe">
+                        <div class="user-info">
+                            <h4>Jane Doe</h4>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="call-to-action">
+            <h2>GET IN TOUCH</h2>
+            <div class="contact-info">
+                <div class="contact-text">
+                    <p>Your reliable transportation partner.</p>
+                    <p>info@journeywaycabs.com</p>
+                </div>
+
+        </section>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-links" style="text-align: center;">
+                    <a href="https://quintoxsolutions.com" target="_blank" rel="noopener noreferrer">
+                        Designed and Managed by Quintox Solutions
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        // JavaScript to handle the Back to Top button
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", (event) => {
+            event.preventDefault();  // Prevent default link behavior
+
+            // For smooth scrolling
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            // Alternative for older browsers without smooth scrolling support:
+            // window.scrollTo(0, 0);  // Instantly scroll to top
+        });
+    </script>
+</body>
+</html>
